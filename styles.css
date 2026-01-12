@@ -43,6 +43,8 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  image-rendering: auto;
+  -ms-interpolation-mode: bicubic;
 }
 
 a {
@@ -99,7 +101,7 @@ a {
 .nav-logo {
   font-weight: 600;
   font-size: 1.125rem;
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .nav-links {
@@ -309,10 +311,15 @@ section {
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .project-card:hover .project-card-image img {
-  transform: scale(1.05);
+  transform: scale(1.05) translateZ(0);
 }
 
 .project-card-content {
@@ -427,8 +434,12 @@ section {
 .about-image img {
   width: 100%;
   border-radius: var(--border-radius);
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .about-text p {
@@ -629,6 +640,10 @@ section {
 .case-study-image img {
   width: 100%;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ============================================

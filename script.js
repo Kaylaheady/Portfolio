@@ -52,12 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Raide",
         subtitle: "Peer-to-peer clothing rental marketplace",
         role: "UX/UI Designer & Product Lead",
-        timeline: "6 months",
         tools: "Figma, React Native, Supabase",
+        projectOverview:
+          "Raide was born out of a simple idea: what if students could rent from each other's closets right on campus, instead of relying on shipping-based resale apps? Many college students wanted new outfits for events, gamedays, and socials without spending a fortune or waiting for shipping. Platforms like Depop and Poshmark offered resale options, but they lacked local accessibility, trust, and instant exchange.\n\nThe goal was to create a platform where users could rent and lend clothing hand-to-hand, safely and conveniently within their community. This meant designing for trust, transparency, and simplicity, ensuring users felt confident connecting with others nearby while keeping the process fun, social, and reliable.",
         problem:
           "The fashion industry is one of the largest polluters globally, yet people still want access to trendy clothing. Traditional rental services are expensive and limited. Raide connects people who want to rent clothes with those who have clothes to rent, creating a sustainable and affordable alternative.",
         research: [
-          "Conducted 15+ user interviews with fashion-conscious millennials and Gen Z",
+          "Conducted 15+ user interviews with fashion-conscious college students",
           "Surveyed 200+ potential users to understand rental behaviors and pain points",
           "Analyzed competitor apps (Rent the Runway, Nuuly) to identify gaps",
           'Created user personas: "The Trend Seeker" and "The Conscious Consumer"',
@@ -77,15 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
           "The final design emphasizes clarity and trust. I used a clean, modern aesthetic with high-quality imagery. The booking flow was streamlined to 3 steps, and I added features like virtual try-on previews and detailed item condition reports.",
         outcome: {
           metrics: [
-            "40% increase in user sign-ups during beta",
+            "20,000+ active users on the platform",
             "85% user satisfaction score",
-            "Average booking time reduced to under 2 minutes",
+            "Over 19 universities Using Raide",
           ],
           learnings: [
             "Trust is the biggest barrier in peer-to-peer marketplaces",
             "High-quality photos are non-negotiable for fashion apps",
-            "In-app messaging significantly reduces support tickets",
-            "Gamification (badges, reviews) increases user engagement",
+            "In-app messaging significantly creates a sense of community",
           ],
         },
       },
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Gamma Phi Beta Website",
         subtitle: "Chapter website + blog experience",
         role: "UX Designer & Developer",
-        timeline: "3 months",
+        timeline: "1 year",
         tools: "Figma, Wix, CMS",
         problem:
           "The Gamma Phi Beta chapter needed a modern website to showcase their activities, share news, and provide resources to members. The existing site was outdated, hard to navigate, and didn't reflect the chapter's vibrant community.",
@@ -158,14 +158,8 @@ document.addEventListener("DOMContentLoaded", function () {
         design:
           "The final design uses a clean, friendly interface with clear visual hierarchy. I focused on making the matching process feel low-pressure and fun, while ensuring safety through school email verification. The app includes features like study goal setting, availability matching, and group chat creation.",
         outcome: {
-          metrics: [
-            "500+ beta users in first month",
-            "70% match acceptance rate",
-            "Average of 2.5 study groups formed per active user",
-          ],
           learnings: [
             "Students prefer lightweight, focused tools over feature-heavy platforms",
-            "Gamification (achievements, streaks) increases engagement",
             "Privacy and safety concerns are top of mind for students",
             "Integration with course management systems would significantly improve UX",
           ],
@@ -199,58 +193,11 @@ document.addEventListener("DOMContentLoaded", function () {
         design:
           "The final design uses soft, calming colors and nature-inspired imagery. The mood tracking flow is simplified to 2-3 taps, with visual feedback that feels rewarding. The garden grows as users track consistently, creating a positive feedback loop. Insights are presented as gentle observations rather than clinical data.",
         outcome: {
-          metrics: [
-            "75% of beta users tracked mood 5+ days per week",
-            "4.7/5 average app store rating",
-            "60% 30-day retention rate",
-            "Users reported feeling more aware of their emotional patterns",
-          ],
           learnings: [
             "Gamification works when it feels supportive, not competitive",
             "Visual metaphors (garden growth) create emotional connection",
             "Quick, frictionless entry is critical for daily tracking apps",
             "Privacy and data control are top concerns for mental health apps",
-          ],
-        },
-      },
-      "project-5": {
-        title: "Fitness App",
-        subtitle: "Personalized workout tracking experience",
-        role: "UX/UI Designer",
-        timeline: "4 months",
-        tools: "Figma, React Native, Firebase",
-        problem:
-          "Existing fitness apps are either too complex (overwhelming for beginners) or too simple (not engaging for regular users). Users need a personalized experience that adapts to their fitness level and goals while keeping them motivated.",
-        research: [
-          "Interviewed 15 fitness app users across different experience levels",
-          "Analyzed app store reviews of top fitness apps",
-          "Conducted diary studies with 8 participants over 2 weeks",
-          "Identified key pain points: lack of personalization, poor progress tracking, low motivation",
-          'Created personas: "The Beginner", "The Regular", and "The Enthusiast"',
-        ],
-        problemStatement:
-          "Fitness enthusiasts need a personalized workout app that adapts to their level, tracks progress meaningfully, and keeps them motivated without feeling overwhelming.",
-        goals: [
-          "Create adaptive workout recommendations based on user progress",
-          "Design clear, motivating progress visualization",
-          "Build in social features that enhance rather than distract",
-          "Ensure the app works for both beginners and advanced users",
-        ],
-        ideation:
-          "I designed a system that starts simple and reveals complexity as users progress. The onboarding collects fitness goals and experience level, then generates a personalized plan. I created wireframes for key flows: workout execution, progress tracking, and plan adjustments.",
-        design:
-          "The final design uses a clean, energetic aesthetic with clear typography and ample whitespace. Workout screens are distraction-free with large, easy-to-tap controls. Progress is visualized through charts and milestone celebrations. The app adapts its interface based on user experience level.",
-        outcome: {
-          metrics: [
-            "4.8/5 average app store rating",
-            "65% 30-day retention rate",
-            "Users complete 40% more workouts than industry average",
-          ],
-          learnings: [
-            "Personalization significantly increases engagement and retention",
-            "Celebrating small wins (streaks, milestones) is highly motivating",
-            "Beginner users need more guidance and encouragement",
-            "Offline mode is essential for workout apps",
           ],
         },
       },
@@ -285,6 +232,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             </div>
+            
+            ${
+              caseStudy.projectOverview
+                ? `
+            <div class="case-study-section">
+                <h2>Project Overview</h2>
+                ${caseStudy.projectOverview
+                  .split("\n\n")
+                  .map((para) => `<p>${para}</p>`)
+                  .join("")}
+            </div>
+            `
+                : ""
+            }
             
             <div class="case-study-section">
                 <h2>Problem</h2>
