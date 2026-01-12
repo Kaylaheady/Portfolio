@@ -46,9 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get("project") || "raide";
 
-    console.log("Loading case study for project:", projectId);
-    console.log("Available case studies:", Object.keys(caseStudies));
-
     // Case study data
     const caseStudies = {
       raide: {
@@ -168,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
       },
-      "project-4": {
+      moodGarden: {
         title: "Mood Garden",
         subtitle: "Mood Tracking app",
         role: "UX/UI Designer",
@@ -205,6 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
     };
+
+    console.log("Loading case study for project:", projectId);
+    console.log("Available case studies:", Object.keys(caseStudies));
 
     // Get case study data
     if (!caseStudies[projectId]) {
@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2>Design</h2>
                 <p>${caseStudy.design}</p>
                 ${
-                  projectId !== "gamma-phi-beta"
+                  projectId !== "gamma-phi-beta" && projectId !== "study-circle"
                     ? `
                 <div class="case-study-image">
                     <img src="assets/img/${projectId}-design.jpg" alt="${caseStudy.title} final design">
