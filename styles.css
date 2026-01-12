@@ -450,11 +450,17 @@ section {
 }
 
 .skills-section,
+.certifications-section,
 .tools-section {
   margin-bottom: var(--spacing-xl);
 }
 
 .skills-section {
+  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.certifications-section {
   padding-top: var(--spacing-lg);
   margin-top: var(--spacing-lg);
 }

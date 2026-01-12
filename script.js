@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get("project") || "raide";
 
+    console.log("Loading case study for project:", projectId);
+    console.log("Available case studies:", Object.keys(caseStudies));
+
     // Case study data
     const caseStudies = {
       raide: {
@@ -204,10 +207,35 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Get case study data
-    const caseStudy = caseStudies[projectId] || caseStudies["raide"];
+    if (!caseStudies[projectId]) {
+      console.error(`Case study not found for project: ${projectId}`);
+      caseStudyContent.innerHTML = `
+        <div class="case-study-section">
+          <h1>Case Study Not Found</h1>
+          <p>The case study for "${projectId}" could not be found.</p>
+          <a href="work.html" class="btn btn-primary">Back to Projects</a>
+        </div>
+      `;
+      return;
+    }
+
+    const caseStudy = caseStudies[projectId];
+
+    if (!caseStudy) {
+      console.error(`Case study data is null for project: ${projectId}`);
+      caseStudyContent.innerHTML = `
+        <div class="case-study-section">
+          <h1>Case Study Not Found</h1>
+          <p>The case study for "${projectId}" could not be found.</p>
+          <a href="work.html" class="btn btn-primary">Back to Projects</a>
+        </div>
+      `;
+      return;
+    }
 
     // Generate HTML
-    const html = `
+    try {
+      const html = `
             <div class="case-study-header">
                 <h1 class="case-study-title">${caseStudy.title}</h1>
                 <p class="case-study-subtitle">${caseStudy.subtitle}</p>
@@ -285,8 +313,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${caseStudy.ideation}</p>
                 <div class="case-study-image">
                     <img src="assets/img/${projectId}-wireframes.jpg" alt="${
-      caseStudy.title
-    } wireframes">
+        caseStudy.title
+      } wireframes">
                 </div>
             </div>
             
@@ -337,10 +365,20 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-    caseStudyContent.innerHTML = html;
+      caseStudyContent.innerHTML = html;
 
-    // Update page title
-    document.title = `${caseStudy.title} — Kayla Heady`;
+      // Update page title
+      document.title = `${caseStudy.title} — Kayla Heady`;
+    } catch (error) {
+      console.error("Error generating case study HTML:", error);
+      caseStudyContent.innerHTML = `
+        <div class="case-study-section">
+          <h1>Error Loading Case Study</h1>
+          <p>There was an error loading the case study. Please try again.</p>
+          <a href="work.html" class="btn btn-primary">Back to Projects</a>
+        </div>
+      `;
+    }
   }
 
   // ============================================
