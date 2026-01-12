@@ -454,6 +454,11 @@ section {
   margin-bottom: var(--spacing-xl);
 }
 
+.skills-section {
+  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;

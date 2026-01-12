@@ -218,12 +218,16 @@ document.addEventListener("DOMContentLoaded", function () {
                           caseStudy.role
                         }</div>
                     </div>
+                    ${
+                      caseStudy.timeline
+                        ? `
                     <div class="case-study-meta-item">
                         <div class="case-study-meta-label">Timeline</div>
-                        <div class="case-study-meta-value">${
-                          caseStudy.timeline
-                        }</div>
+                        <div class="case-study-meta-value">${caseStudy.timeline}</div>
                     </div>
+                    `
+                        : ""
+                    }
                     <div class="case-study-meta-item">
                         <div class="case-study-meta-label">Tools</div>
                         <div class="case-study-meta-value">${
@@ -289,27 +293,47 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="case-study-section">
                 <h2>Design</h2>
                 <p>${caseStudy.design}</p>
+                ${
+                  projectId !== "gamma-phi-beta"
+                    ? `
                 <div class="case-study-image">
-                    <img src="assets/img/${projectId}-design.jpg" alt="${
-      caseStudy.title
-    } final design">
+                    <img src="assets/img/${projectId}-design.jpg" alt="${caseStudy.title} final design">
                 </div>
+                `
+                    : ""
+                }
             </div>
             
             <div class="case-study-section">
                 <h2>Outcome</h2>
+                ${
+                  caseStudy.outcome &&
+                  caseStudy.outcome.metrics &&
+                  caseStudy.outcome.metrics.length > 0
+                    ? `
                 <h3>Metrics</h3>
                 <ul>
                     ${caseStudy.outcome.metrics
                       .map((metric) => `<li>${metric}</li>`)
                       .join("")}
                 </ul>
+                `
+                    : ""
+                }
+                ${
+                  caseStudy.outcome &&
+                  caseStudy.outcome.learnings &&
+                  caseStudy.outcome.learnings.length > 0
+                    ? `
                 <h3>Key Learnings</h3>
                 <ul>
                     ${caseStudy.outcome.learnings
                       .map((learning) => `<li>${learning}</li>`)
                       .join("")}
                 </ul>
+                `
+                    : ""
+                }
             </div>
         `;
 
