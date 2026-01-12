@@ -139,18 +139,20 @@ a {
   font-size: 0.9375rem;
   font-weight: 500;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   transition: var(--transition);
   text-align: center;
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
-  color: white;
+  background-color: white;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-accent);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(187, 209, 239, 0.3);
 }
@@ -173,7 +175,7 @@ a {
 .hero {
   padding: var(--spacing-xl) 0;
   text-align: center;
-  min-height: 60vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,6 +187,12 @@ a {
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
   background-attachment: fixed, fixed;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
 }
 
 .hero .container {
