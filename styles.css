@@ -247,8 +247,13 @@ section {
 .featured-work {
   background-color: var(--color-card-bg);
   border-radius: 4rem 4rem 0 0;
-  overflow: hidden;
+  overflow: visible;
   padding-top: calc(var(--spacing-xl) + 2rem);
+  /* Soft shadow so the gradient shows along the curved edges */
+  box-shadow:
+    0 -8px 32px rgba(187, 209, 239, 0.35),
+    0 4px 24px rgba(187, 209, 239, 0.12),
+    0 0 0 1px rgba(187, 209, 239, 0.2);
 }
 
 .section-title {
