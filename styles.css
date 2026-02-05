@@ -218,6 +218,10 @@ a {
   margin-right: auto;
 }
 
+.hero .container > .hero-subtitle:first-of-type {
+  margin-top: var(--spacing-xl);
+}
+
 @media (min-width: 768px) {
   .hero-subtitle {
     font-size: 1.5rem;
@@ -237,6 +241,14 @@ a {
 
 section {
   padding: var(--spacing-xl) 0;
+}
+
+/* Featured Work: curved top */
+.featured-work {
+  background-color: var(--color-card-bg);
+  border-radius: 4rem 4rem 0 0;
+  overflow: hidden;
+  padding-top: calc(var(--spacing-xl) + 2rem);
 }
 
 .section-title {
