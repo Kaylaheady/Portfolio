@@ -182,7 +182,7 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(to bottom, #ffffff 0%, #bbd1ef 100%);
+  background: radial-gradient(ellipse at center, #bbd1ef 0%, #ffffff 70%);
 }
 
 @media (min-width: 768px) {
