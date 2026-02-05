@@ -182,72 +182,7 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-}
-
-/* Aurora-style background (CSS-only, no React) */
-.hero-aurora {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: linear-gradient(
-    135deg,
-    #bbd1ef 0%,
-    #9bb8d9 25%,
-    #4187d8 50%,
-    #9bb8d9 75%,
-    #bbd1ef 100%
-  );
-  background-size: 400% 400%;
-  animation: aurora-shift 15s ease-in-out infinite;
-}
-
-.hero-aurora::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: radial-gradient(
-    ellipse 80% 50% at 20% 40%,
-    rgba(187, 209, 239, 0.8) 0%,
-    transparent 50%
-  );
-  animation: aurora-drift 12s ease-in-out infinite;
-}
-
-.hero-aurora::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: radial-gradient(
-    ellipse 60% 40% at 80% 60%,
-    rgba(65, 135, 216, 0.5) 0%,
-    rgba(155, 184, 217, 0.3) 40%,
-    transparent 70%
-  );
-  animation: aurora-drift 18s ease-in-out infinite reverse;
-}
-
-@keyframes aurora-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes aurora-drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(3%, -2%) scale(1.05);
-  }
-  66% {
-    transform: translate(-2%, 2%) scale(0.98);
-  }
+  background: radial-gradient(ellipse at center, #bbd1ef 0%, #ffffff 70%);
 }
 
 @media (min-width: 768px) {
