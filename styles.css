@@ -182,8 +182,8 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: url("assets/img/hero-background.png") center center / contain no-repeat,
-    radial-gradient(ellipse at center, #bbd1ef 0%, #ffffff 70%);
+  background: url("assets/img/hero-background.png") center center / 85% no-repeat,
+    #ffffff;
 }
 
 @media (min-width: 768px) {
