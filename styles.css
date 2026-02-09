@@ -191,8 +191,11 @@ a {
   inset: 10%;
   z-index: 0;
   border-radius: 3rem;
-  background: url("assets/img/hero-background.png") center center / cover no-repeat;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: url("assets/img/hero-background.png") center center / cover
+    no-repeat;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 @media (min-width: 768px) {
@@ -230,6 +233,7 @@ a {
 
 .hero .container > .hero-subtitle:first-of-type {
   margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
 }
 
 @media (min-width: 768px) {
