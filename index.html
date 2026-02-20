@@ -24,7 +24,7 @@
         <div class="hero-bg-shape" aria-hidden="true"></div>
         <div class="container">
           <p class="hero-subtitle">Hello, I'm</p>
-          <h1 class="hero-title">Kayla Heady</h1>
+          <h1 class="hero-title"><span id="typed-name"></span></h1>
           <p class="hero-subtitle">
             UX designer and engineer who builds research-driven, trust-focused
             digital experiences for consumer marketplaces - serving 20,000+
@@ -153,6 +153,19 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Typed('#typed-name', {
+          strings: ['Kayla Heady'],
+          typeSpeed: 80,
+          backSpeed: 50,
+          backDelay: 1500,
+          loop: true,
+          showCursor: false
+        });
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
