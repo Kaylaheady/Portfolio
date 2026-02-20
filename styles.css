@@ -262,7 +262,7 @@ section {
   background-color: var(--color-card-bg);
   border-radius: 4rem 4rem 0 0;
   overflow: visible;
-  padding-top: calc(var(--spacing-xl) + 5rem);
+  padding-top: calc(var(--spacing-xl) + 10rem);
   /* Soft shadow so the gradient shows along the curved edges */
   box-shadow:
     0 -8px 32px rgba(187, 209, 239, 0.35),
