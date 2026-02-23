@@ -182,6 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Mood Garden",
         subtitle: "Mood Tracking app",
         designImage: "mood-garden-screens.png",
+        wireframesImage: "mood-garden-wireframes.png",
         role: "UX/UI Designer",
         timeline: "4 months",
         tools: "Figma, React Native, User Research",
@@ -335,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2>Ideation</h2>
                 <p>${caseStudy.ideation}</p>
                 <div class="case-study-image">
-                    <img src="assets/img/${projectId}-wireframes.png" alt="${
+                    <img src="assets/img/${caseStudy.wireframesImage || projectId + "-wireframes.png"}" alt="${
         caseStudy.title
       } wireframes">
                 </div>
