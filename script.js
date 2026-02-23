@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="case-study-section">
           <h1>Case Study Not Found</h1>
           <p>The case study for "${projectId}" could not be found.</p>
-          <a href="work.html" class="btn btn-primary">Back to Projects</a>
+          <a href="work.html" class="btn btn-primary">Back to Work</a>
         </div>
       `;
       return;
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="case-study-section">
           <h1>Case Study Not Found</h1>
           <p>The case study for "${projectId}" could not be found.</p>
-          <a href="work.html" class="btn btn-primary">Back to Projects</a>
+          <a href="work.html" class="btn btn-primary">Back to Work</a>
         </div>
       `;
       return;
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2>Ideation</h2>
                 <p>${caseStudy.ideation}</p>
                 <div class="case-study-image">
-                    <img src="assets/img/${projectId}-wireframes.jpg" alt="${
+                    <img src="assets/img/${projectId}-wireframes.png" alt="${
         caseStudy.title
       } wireframes">
                 </div>
@@ -407,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="case-study-section">
           <h1>Error Loading Case Study</h1>
           <p>There was an error loading the case study. Please try again.</p>
-          <a href="work.html" class="btn btn-primary">Back to Projects</a>
+          <a href="work.html" class="btn btn-primary">Back to Work</a>
         </div>
       `;
     }
