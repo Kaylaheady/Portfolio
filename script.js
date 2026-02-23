@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       raide: {
         title: "Raide",
         subtitle: "Peer-to-peer clothing rental marketplace",
+        heroImage: "raide-screens.png",
         role: "UX/UI Designer & Product Lead",
         tools: "Figma, React Native, Supabase",
         projectOverview:
@@ -246,6 +247,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Generate HTML
     try {
       const html = `
+            ${
+              caseStudy.heroImage
+                ? `
+            <div class="case-study-hero-image">
+                <img src="assets/img/${caseStudy.heroImage}" alt="${caseStudy.title} app screens">
+            </div>
+            `
+                : ""
+            }
             <div class="case-study-header">
                 <h1 class="case-study-title">${caseStudy.title}</h1>
                 <p class="case-study-subtitle">${caseStudy.subtitle}</p>

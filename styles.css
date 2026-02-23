@@ -317,6 +317,7 @@ section {
 }
 
 .section-title {
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: var(--spacing-lg);
@@ -400,6 +401,7 @@ section {
 
 .project-card-title {
   font-size: 1.25rem;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   margin-bottom: var(--spacing-xs);
   color: var(--color-text);
@@ -473,6 +475,7 @@ section {
   color: var(--color-text-light);
   max-width: 700px;
   margin-bottom: var(--spacing-md);
+  font-family: "Playfair Display", serif;
 }
 
 .link-arrow {
@@ -637,6 +640,20 @@ section {
   }
 }
 
+.case-study-hero-image {
+  width: 100%;
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.case-study-hero-image img {
+  width: 100%;
+  display: block;
+  vertical-align: middle;
+}
+
 .case-study-header {
   margin-bottom: var(--spacing-xl);
 }
@@ -776,7 +793,7 @@ section {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: inherit;
+  font-family: "Playfair Display", serif;
   background-color: var(--color-card-bg);
   color: var(--color-text);
   transition: var(--transition);
