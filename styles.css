@@ -213,6 +213,7 @@ a {
 }
 
 .hero-title {
+  font-family: "Instrument Serif", serif;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
