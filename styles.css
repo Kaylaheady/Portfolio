@@ -103,7 +103,7 @@ a {
   font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: 1.125rem;
-  color: var(--color-accent);
+  color: var(--color-text-light);
 }
 
 .nav-links {

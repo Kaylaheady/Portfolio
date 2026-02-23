@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
       raide: {
         title: "Raide",
         subtitle: "Peer-to-peer clothing rental marketplace",
-        heroImage: "raide-screens.png",
+        designImage: "raide-screens.png",
+        outcomeImage: "raide-design.jpg",
         role: "UX/UI Designer & Product Lead",
         tools: "Figma, React Native, Supabase",
         projectOverview:
@@ -144,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "study-circle": {
         title: "Study Circle",
         subtitle: "Match classmates and study groups",
+        heroImage: "study-circle-screens.png",
         role: "UX Designer",
         timeline: "4 months",
         tools: "Figma, Principle, UserTesting",
@@ -179,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       moodGarden: {
         title: "Mood Garden",
         subtitle: "Mood Tracking app",
+        heroImage: "mood-garden-screens.png",
         role: "UX/UI Designer",
         timeline: "4 months",
         tools: "Figma, React Native, User Research",
@@ -342,10 +345,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2>Design</h2>
                 <p>${caseStudy.design}</p>
                 ${
-                  projectId !== "gamma-phi-beta" && projectId !== "study-circle"
+                  (projectId !== "gamma-phi-beta" && projectId !== "study-circle") || caseStudy.designImage
                     ? `
                 <div class="case-study-image">
-                    <img src="assets/img/${projectId}-design.jpg" alt="${caseStudy.title} final design">
+                    <img src="assets/img/${caseStudy.designImage || projectId + "-design.jpg"}" alt="${caseStudy.title} final design">
                 </div>
                 `
                     : ""
@@ -379,6 +382,15 @@ document.addEventListener("DOMContentLoaded", function () {
                       .map((learning) => `<li>${learning}</li>`)
                       .join("")}
                 </ul>
+                `
+                    : ""
+                }
+                ${
+                  caseStudy.outcomeImage
+                    ? `
+                <div class="case-study-image">
+                    <img src="assets/img/${caseStudy.outcomeImage}" alt="${caseStudy.title} outcome">
+                </div>
                 `
                     : ""
                 }
