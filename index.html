@@ -25,12 +25,12 @@
         <div class="hero-bg-shape" aria-hidden="true"></div>
         <div class="container">
           <p class="hero-subtitle">Hello, I'm</p>
-          <h1 class="hero-title"><span id="typed-name">Kayla Heady</span></h1>
-          <p class="hero-subtitle">
+          <h1 class="hero-title" id="heroName"></h1>
+          <p class="hero-subtitle" id="heroDesc">
             UX designer and engineer who builds research-driven, trust-focused
             digital experiences for consumer marketplaces - serving 20,000+
           </p>
-          <div class="hero-cta">
+          <div class="hero-cta" id="heroActions">
             <a href="work.html" class="btn btn-primary">View Work</a>
             <a href="contact.html" class="btn btn-primary">Contact</a>
           </div>
@@ -155,20 +155,49 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        new Typed('#typed-name', {
-          strings: ['Kayla Heady'],
-          typeSpeed: 80,
-          backSpeed: 50,
-          backDelay: 1500,
-          loop: true,
-          showCursor: false
-        });
-      });
-    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      (function () {
+        var START_DELAY = 950;
+        var LETTER_MS = 72;
+        var NAME = "Kayla Heady";
+
+        var heroName = document.getElementById("heroName");
+        if (!heroName) return;
+
+        for (var i = 0; i < NAME.length; i++) {
+          var span = document.createElement("span");
+          span.className = "letter";
+          span.textContent = NAME[i] === " " ? "\u00A0" : NAME[i];
+          heroName.appendChild(span);
+        }
+
+        var cursor = document.createElement("span");
+        cursor.className = "cursor";
+        heroName.appendChild(cursor);
+
+        for (var j = 0; j < NAME.length; j++) {
+          (function (idx) {
+            setTimeout(function () {
+              heroName.children[idx].classList.add("visible");
+              if (idx === NAME.length - 1) {
+                setTimeout(function () {
+                  cursor.classList.add("done");
+                }, LETTER_MS);
+                setTimeout(function () {
+                  var desc = document.getElementById("heroDesc");
+                  if (desc) desc.classList.add("hero-revealed");
+                }, 400);
+                setTimeout(function () {
+                  var actions = document.getElementById("heroActions");
+                  if (actions) actions.classList.add("hero-revealed");
+                }, 700);
+              }
+            }, START_DELAY + idx * LETTER_MS);
+          })(j);
+        }
+      })();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
