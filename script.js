@@ -3,6 +3,16 @@
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
+  // AOS (Animate On Scroll) - subtle fade-up for sections and project cards
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 500,
+      easing: "ease-out",
+      once: true,
+      offset: 60,
+    });
+  }
+
   // Check if we're on the work page
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");

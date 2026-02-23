@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kayla Heady — UX/UI Designer & Builder</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
     <nav class="nav">
@@ -20,7 +21,7 @@
 
     <main>
       <!-- Hero Section -->
-      <section class="hero">
+      <section class="hero" data-aos="fade-up">
         <div class="hero-bg-shape" aria-hidden="true"></div>
         <div class="container">
           <p class="hero-subtitle">Hello, I'm</p>
@@ -37,11 +38,11 @@
       </section>
 
       <!-- Featured Work -->
-      <section class="featured-work">
+      <section class="featured-work" data-aos="fade-up">
         <div class="container">
           <h2 class="section-title">Featured Work</h2>
           <div class="project-grid">
-            <a href="case-study.html?project=raide" class="project-card">
+            <a href="case-study.html?project=raide" class="project-card" data-aos="fade-up">
               <div class="project-card-image">
                 <img
                   src="assets/img/raide-thumb.jpg"
@@ -60,7 +61,7 @@
                 </div>
               </div>
             </a>
-            <a href="case-study.html?project=study-circle" class="project-card">
+            <a href="case-study.html?project=study-circle" class="project-card" data-aos="fade-up">
               <div class="project-card-image">
                 <img
                   src="assets/img/study-circle-thumb.jpg"
@@ -83,6 +84,7 @@
             <a
               href="case-study.html?project=gamma-phi-beta"
               class="project-card"
+              data-aos="fade-up"
             >
               <div class="project-card-image">
                 <img
@@ -102,7 +104,7 @@
                 </div>
               </div>
             </a>
-            <a href="case-study.html?project=moodGarden" class="project-card">
+            <a href="case-study.html?project=moodGarden" class="project-card" data-aos="fade-up">
               <div class="project-card-image">
                 <img
                   src="assets/img/moodGarden-thumb.jpg"
@@ -124,7 +126,7 @@
       </section>
 
       <!-- About Teaser -->
-      <section class="about-teaser">
+      <section class="about-teaser" data-aos="fade-up">
         <div class="container">
           <h2 class="section-title">About</h2>
           <p class="about-teaser-text">
@@ -166,6 +168,7 @@
         });
       });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
