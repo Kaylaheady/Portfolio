@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
 /* ============================================
    GLOBAL DESIGN SYSTEM
    ============================================ */
@@ -100,9 +102,10 @@ a {
 }
 
 .nav-logo {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: 1.125rem;
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .nav-links {
@@ -213,7 +216,7 @@ a {
 }
 
 .hero-title {
-  font-family: "Instrument Serif", serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
@@ -235,7 +238,8 @@ a {
   width: 3px;
   height: 0.75em;
   margin-left: 2px;
-  vertical-align: text-bottom;
+  vertical-align: middle;
+  transform: translateY(-3px);
   background-color: currentColor;
   border-radius: 1px;
   animation: blink 0.85s step-end infinite;
