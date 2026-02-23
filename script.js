@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "study-circle": {
         title: "Study Circle",
         subtitle: "Match classmates and study groups",
-        heroImage: "study-circle-screens.png",
+        designImage: "study-circle-screens.png",
         role: "UX Designer",
         timeline: "4 months",
         tools: "Figma, Principle, UserTesting",
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       moodGarden: {
         title: "Mood Garden",
         subtitle: "Mood Tracking app",
-        heroImage: "mood-garden-screens.png",
+        designImage: "mood-garden-screens.png",
         role: "UX/UI Designer",
         timeline: "4 months",
         tools: "Figma, React Native, User Research",
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const html = `
             ${
-              caseStudy.heroImage
+              caseStudy.heroImage && projectId !== "raide" && projectId !== "study-circle" && projectId !== "moodGarden"
                 ? `
             <div class="case-study-hero-image">
                 <img src="assets/img/${caseStudy.heroImage}" alt="${caseStudy.title} app screens">
