@@ -188,9 +188,9 @@ a {
 
 .hero-bg-shape {
   position: absolute;
-  inset: 0;
+  inset: 5%;
   z-index: 0;
-  border-radius: 0;
+  border-radius: 2rem;
   background: url("assets/img/hero-background.png") center center / cover
     no-repeat;
   box-shadow:
