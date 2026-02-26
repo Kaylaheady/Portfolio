@@ -743,6 +743,55 @@ section {
   margin: 0;
 }
 
+.callout-box ul {
+  margin: 0;
+  padding-left: var(--spacing-md);
+}
+
+.callout-box li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.callout-box li:last-child {
+  margin-bottom: 0;
+}
+
+/* Outcome metrics – horizontal cards (value on top, label below) */
+.outcome-metrics--cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-md) 0;
+}
+
+.outcome-metric-card {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+}
+
+.outcome-metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.outcome-metric-label {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .outcome-metrics--cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .case-study-image {
   width: 100%;
   margin: var(--spacing-md) 0;

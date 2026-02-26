@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
           "The final design emphasizes clarity and trust. I used a clean, modern aesthetic with high-quality imagery. The booking flow was streamlined to 3 steps, and I added features like virtual try-on previews and detailed item condition reports.",
         outcome: {
           metrics: [
-            "20,000+ active users on the platform",
-            "85% user satisfaction score",
-            "Over 19 universities Using Raide",
+            { value: "20,000+", label: "active users on the platform" },
+            { value: "85%", label: "user satisfaction score" },
+            { value: "19", label: "universities Using Raide" },
           ],
           learnings: [
             "Trust is the biggest barrier in peer-to-peer marketplaces",
@@ -362,14 +362,27 @@ document.addEventListener("DOMContentLoaded", function () {
                   caseStudy.outcome &&
                   caseStudy.outcome.metrics &&
                   caseStudy.outcome.metrics.length > 0
-                    ? `
+                    ? (() => {
+                        const metrics = caseStudy.outcome.metrics;
+                        const isCardFormat = metrics[0] && typeof metrics[0] === "object" && "value" in metrics[0];
+                        return `
                 <h3>Metrics</h3>
-                <ul>
-                    ${caseStudy.outcome.metrics
-                      .map((metric) => `<li>${metric}</li>`)
-                      .join("")}
-                </ul>
-                `
+                <div class="outcome-metrics${isCardFormat ? " outcome-metrics--cards" : ""}">
+                ${isCardFormat
+                  ? metrics
+                      .map(
+                        (m) => `
+                    <div class="outcome-metric-card">
+                      <div class="outcome-metric-value">${m.value}</div>
+                      <div class="outcome-metric-label">${m.label}</div>
+                    </div>`
+                      )
+                      .join("")
+                  : `<div class="callout-box"><ul>${metrics.map((m) => `<li>${m}</li>`).join("")}</ul></div>`
+                }
+                </div>
+                `;
+                      })()
                     : ""
                 }
                 ${
