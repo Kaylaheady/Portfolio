@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         problem:
           "The fashion industry is one of the largest polluters globally, yet people still want access to trendy clothing. Traditional rental services are expensive and limited. Raide connects people who want to rent clothes with those who have clothes to rent, creating a sustainable and affordable alternative.",
         research: [
-          "Conducted 15+ user interviews with fashion-conscious college students",
+          "Conducted 100+ user interviews with fashion-conscious college students",
           "Surveyed 200+ potential users to understand rental behaviors and pain points",
           "Analyzed competitor apps (Rent the Runway, Nuuly) to identify gaps",
           'Created user personas: "The Trend Seeker" and "The Conscious Consumer"',
@@ -130,9 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
           "The design balances professionalism with warmth, using the sorority's colors thoughtfully. I created reusable components in Wix that make it easy for chapter members to add new blog posts and update content without technical knowledge.",
         outcome: {
           metrics: [
-            "60% increase in page views",
-            "Average session duration increased by 2x",
-            "95% of members found the new site easier to use",
+            { value: "60%", label: "increase in page views" },
+            { value: "2x", label: "average session duration increase" },
+            { value: "95%", label: "of members found the new site easier to use" },
           ],
           learnings: [
             "CMS usability is critical for client-managed sites",
