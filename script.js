@@ -13,6 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // ============================================
+  // SCROLL PROGRESS BAR (all pages)
+  // ============================================
+  const scrollProgress = document.createElement("div");
+  scrollProgress.className = "scroll-progress";
+  document.body.appendChild(scrollProgress);
+
+  let scrollProgressTicking = false;
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = percent + "%";
+    scrollProgressTicking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!scrollProgressTicking) {
+      requestAnimationFrame(updateScrollProgress);
+      scrollProgressTicking = true;
+    }
+  });
+  updateScrollProgress();
+
   // Check if we're on the work page
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projectCards = document.querySelectorAll(".project-card");
@@ -61,158 +84,177 @@ document.addEventListener("DOMContentLoaded", function () {
       raide: {
         title: "Raide",
         subtitle: "Peer-to-peer clothing rental marketplace",
-        designImage: "raide-screens.png",
         outcomeImage: "raide-design.jpg",
         role: "UX/UI Designer & Product Lead",
         tools: "Figma, React Native, Supabase",
         projectOverview:
-          "Raide was born out of a simple idea: what if students could rent from each other's closets right on campus, instead of relying on shipping-based resale apps? Many college students wanted new outfits for events, gamedays, and socials without spending a fortune or waiting for shipping. Platforms like Depop and Poshmark offered resale options, but they lacked local accessibility, trust, and instant exchange.\n\nThe goal was to create a platform where users could rent and lend clothing hand-to-hand, safely and conveniently within their community. This meant designing for trust, transparency, and simplicity, ensuring users felt confident connecting with others nearby while keeping the process fun, social, and reliable.",
+          "Raide is a peer-to-peer clothing rental marketplace built for college students, connecting people who want to rent trendy clothes with those who have closets full of them. As a founding team member, I owned the product from the ground up: conducting user research, defining the roadmap, prioritizing features, coordinating across design and engineering, and shipping a live iOS app that has grown to 24,000+ active users across 2,000+ schools.",
         problem:
-          "The fashion industry is one of the largest polluters globally, yet people still want access to trendy clothing. Traditional rental services are expensive and limited. Raide connects people who want to rent clothes with those who have clothes to rent, creating a sustainable and affordable alternative.",
+          "College students wanted access to trendy clothing for events, gamedays, and socials without the cost of buying or the wait of shipping. Existing platforms like Depop and Poshmark offered resale but lacked local accessibility, trust, and instant exchange. There was no product built specifically for campus communities.",
+        myRole:
+          "I joined as a founding team member responsible for product strategy, user research, feature prioritization, and front-end implementation. I worked across every stage of the product lifecycle, from initial discovery through ongoing iteration, collaborating with engineering and design to bring features to market and measure their impact.",
         research: [
           "Conducted 100+ user interviews with fashion-conscious college students",
           "Surveyed 200+ potential users to understand rental behaviors and pain points",
-          "Analyzed competitor apps (Rent the Runway, Nuuly) to identify gaps",
-          'Created user personas: "The Trend Seeker" and "The Conscious Consumer"',
-          "Mapped user journey from discovery to return",
+          "Analyzed competitor products (Rent the Runway, Nuuly, Depop) to identify market gaps",
+          'Developed user personas — "The Trend Seeker" and "The Conscious Consumer" — to guide feature prioritization',
+          "Mapped the full user journey from discovery through return to identify friction points",
         ],
-        problemStatement:
-          "Fashion-conscious individuals need an affordable, convenient way to access trendy clothing without contributing to fast fashion waste.",
-        goals: [
-          "Build trust between renters and lenders through verification and reviews",
-          "Create a seamless booking and payment flow",
-          "Design an intuitive search and discovery experience",
-          "Ensure clear communication about item condition and availability",
+        prioritizationInsight:
+          "The research surfaced one central insight: trust was the biggest barrier to peer-to-peer rental. Students were willing to rent from strangers but needed confidence that items would arrive as described and that the exchange would be safe. This shaped every prioritization decision we made.",
+        prioritization: [
+          "Verified profiles and in-app messaging: to establish trust before a transaction",
+          "Streamlined booking and payment flow: reduced to 3 steps based on drop-off data",
+          "Item condition reporting and photo standards: non-negotiable for fashion credibility",
+          "Rating and review system: to build community accountability over time",
         ],
-        ideation:
-          "I started with low-fidelity wireframes focusing on the core user flows: browsing, booking, and managing rentals. Key decisions included a card-based browsing interface, in-app messaging, and a rating system to build community trust.",
-        design:
-          "The final design emphasizes clarity and trust. I used a clean, modern aesthetic with high-quality imagery. The booking flow was streamlined to 3 steps, and I added features like virtual try-on previews and detailed item condition reports.",
+        executionDelivery:
+          "I coordinated feature development across sprints, maintained the product backlog, ran daily standups, and managed delivery from requirements through QA and launch. I also implemented many features directly in React Native, which allowed me to move faster and maintain tighter alignment between what was designed and what shipped.",
         outcome: {
           metrics: [
-            { value: "20,000+", label: "active users on the platform" },
+            { value: "24,000+", label: "active users on the platform" },
             { value: "85%", label: "user satisfaction score" },
-            { value: "19", label: "universities Using Raide" },
+            { value: "2000", label: "universities Using Raide" },
           ],
           learnings: [
-            "Trust is the biggest barrier in peer-to-peer marketplaces",
-            "High-quality photos are non-negotiable for fashion apps",
-            "In-app messaging significantly creates a sense of community",
+            "Trust is the core product problem in any peer-to-peer marketplace — design and features only work if they address it directly",
+            "Ruthless prioritization is more valuable than building everything — the features we cut were the right call",
+            "Being able to speak both design and engineering languages made me a more effective product leader — I could translate between the two without losing anything",
           ],
         },
       },
       "gamma-phi-beta": {
         title: "Gamma Phi Beta Website",
-        subtitle: "Chapter website + blog experience",
-        role: "UX Designer & Developer",
+        subtitle: "Chapter website + content strategy",
+        role: "Webmaster & Content Project Manager",
         timeline: "1 year",
-        tools: "Figma, Wix, CMS",
+        tools: "Wix CMS, Instagram, LinkedIn",
+        projectOverview:
+          "Gamma Phi Beta is my sorority chapter at Florida State University. As Webmaster and Content Manager, I owned the chapter's entire digital presence — building and maintaining the website, launching a content initiative called Sister Spotlights, and growing the chapter's social media following. This project gave me hands-on experience managing a team, coordinating content across multiple channels, and driving measurable audience growth through consistent execution.",
         problem:
-          "The Gamma Phi Beta chapter needed a modern website to showcase their activities, share news, and provide resources to members. The existing site was outdated, hard to navigate, and didn't reflect the chapter's vibrant community.",
+          "The chapter had a digital presence that wasn't working. The website was outdated, the Instagram had low engagement, and there was no structured way to celebrate and share the stories of chapter members. New members and prospective recruits couldn't get a real sense of who the chapter was from the digital experience alone. The brand wasn't translating online.",
+        myRole:
+          "Webmaster and Content Project Manager. I owned the website, led the Sister Spotlights initiative, managed a team of 15 contributors, and served as the primary point of contact between the creative team and chapter leadership.",
         research: [
-          "Interviewed chapter leadership to understand content priorities",
-          "Surveyed 50+ members about what information they needed most",
-          "Analyzed competitor sorority websites for best practices",
-          "Audited existing content and identified information architecture issues",
-          "Created user flows for different member types (new members, active members, alumni)",
+          "Audited the existing website and identified key gaps: outdated content, poor mobile experience, and no storytelling beyond event announcements",
+          "Reviewed competitor chapter websites and Instagram accounts to benchmark content quality and engagement",
+          "Spoke with chapter members and leadership to understand what was missing and what they wanted the digital presence to represent",
+          "Identified the core insight: the chapter had incredible people and stories but no structured way to surface them",
         ],
-        problemStatement:
-          "Chapter members and visitors need quick, easy access to information about events, resources, and chapter news in a format that reflects the organization's values and community.",
-        goals: [
-          "Improve information architecture and navigation",
-          "Create a blog section for regular updates",
-          "Design a mobile-responsive experience",
-          "Make it easy for non-technical users to update content via CMS",
+        prioritizationInsight:
+          "The research pointed to one clear opportunity: human storytelling. Generic event posts weren't building community or attracting new members. The chapter needed a content product that put real people at the center.\n\nThis led to the creation of Sister Spotlights — a recurring content series profiling chapter members, their achievements, and their stories. Each spotlight included a written feature, a professional-quality photo, and cross-channel publishing.",
+        prioritization: [
+          "Sister Spotlights launch: the highest-impact content opportunity identified in research",
+          "Website rebuild: updated content, improved navigation, better mobile experience",
+          "Cross-channel consistency: website, Instagram, and LinkedIn needed to feel cohesive",
+          "Publishing cadence: consistent timing was more important than volume",
         ],
-        ideation:
-          "I restructured the site architecture into clear sections: About, Events, Blog, Resources, and Contact. The blog became a central hub for chapter news, and I designed a card-based layout that works well on all devices.",
-        design:
-          "The design balances professionalism with warmth, using the sorority's colors thoughtfully. I created reusable components in Wix that make it easy for chapter members to add new blog posts and update content without technical knowledge.",
+        prioritizationCut:
+          "Features considered but cut: podcast series, YouTube channel, member directory. These were exciting but required resources and time the team didn't have. Staying focused on what we could execute consistently was the right call.",
+        executionDelivery:
+          "I managed 15 contributors simultaneously — assigning subjects to writers, coordinating photographers, reviewing drafts, managing approval from chapter leadership, and publishing on schedule across all three channels. I also built and maintained the website in Wix CMS, handling all content configuration, page builds, and updates throughout my tenure.\n\nThe project ran for a full academic year with consistent weekly publishing across all channels — no missed deadlines.",
         outcome: {
           metrics: [
-            { value: "60%", label: "increase in page views" },
-            { value: "2x", label: "average session duration increase" },
-            { value: "95%", label: "of members found the new site easier to use" },
+            "2,000+ Instagram followers gained during tenure",
+            "Consistent weekly content published across website, Instagram, and LinkedIn with no missed deadlines",
+            "Sister Spotlights became a recognized part of chapter culture — members looked forward to being featured",
+            "Website rebuilt with updated content, improved mobile experience, and cleaner information architecture",
           ],
           learnings: [
-            "CMS usability is critical for client-managed sites",
-            "Clear information hierarchy reduces bounce rate",
-            "Regular blog content keeps the site feeling fresh and active",
-            "Mobile-first design is essential for student audiences",
+            "Managing a team of volunteers is harder than managing paid contributors — motivation and accountability require more intentional effort when there's no financial incentive",
+            "Consistency beats quality in content — showing up every week built more audience trust than any single perfect post",
+            "Scoping a content initiative correctly at the start prevents burnout later — we cut ideas early and were better for it",
+            "The skills of a product manager and a content manager overlap more than people think — both require prioritization, coordination, stakeholder communication, and measuring what matters",
           ],
         },
       },
       "study-circle": {
         title: "Study Circle",
         subtitle: "Match classmates and study groups",
-        designImage: "study-circle-screens.png",
-        role: "UX Designer",
-        timeline: "4 months",
-        tools: "Figma, Principle, UserTesting",
+        outcomeImage: "study-circle-screens.png",
+        role: "Product Owner, Designer, Developer",
+        timeline: "6 months",
+        tools: "Figma, React Native, Supabase, Node.js",
+        projectOverview:
+          "Study Circle is a mobile app that matches college students from the same class into study groups automatically. I built this as an academic project, owning the full product lifecycle from problem definition and user research through design, development, and testing. It is a fully functional prototype built in React Native with Supabase and Node.js.",
         problem:
-          "Students struggle to find study partners, especially in large classes or when taking online courses. Existing solutions are either too generic (Facebook groups) or too complex (full social networks). Students need a simple, focused way to connect with classmates.",
+          "College students struggle to find classmates to study with. Study groups form through awkward social media posts, random group chats, or not at all. There was no dedicated tool that made it easy to connect with the right people from your specific class at the right time.",
+        myRole:
+          "Solo product owner, designer, and developer. I was responsible for every stage — research, requirements, prioritization, UX design, and front-end implementation.",
         research: [
-          "Conducted 20+ interviews with college students across different majors",
-          "Observed study group formation behaviors on campus",
-          "Analyzed pain points in existing study group apps",
-          "Created journey maps for different study scenarios (exam prep, project collaboration, regular study sessions)",
-          "Identified key moments: finding matches, scheduling, and maintaining groups",
+          "Conducted informal user interviews with college students across multiple majors",
+          "Identified three core pain points: not knowing who else is in your class, fear of reaching out to strangers, and group chats dying out quickly",
+          "Mapped the user journey from noticing they need help studying to successfully connecting with a group",
         ],
-        problemStatement:
-          "Students need a simple, trustworthy way to find and connect with study partners who share their classes and learning goals.",
-        goals: [
-          "Make it easy to find classmates in specific courses",
-          "Enable quick matching based on study preferences and schedules",
-          "Facilitate initial conversation and group formation",
-          "Build trust through verified student status",
+        prioritizationInsight:
+          "The research revealed that the biggest barrier wasn't finding study partners — it was the social friction of reaching out. Students didn't want to cold-message classmates. This shaped the core product decision: automated matching rather than a browse-and-request model.",
+        prioritization: [
+          "Automated group matching by class: removes social friction entirely",
+          "In-app group chat: keeps communication contained and organized",
+          "Simple onboarding: course selection needed to be fast or students would drop off",
+          "Authentication: necessary for trust and accountability within groups",
         ],
-        ideation:
-          "I designed a swipe-based matching interface (inspired by dating apps but focused on study compatibility). Key features included course-based matching, study preference tags, and a simple messaging system. I created multiple wireframe iterations to test different approaches to the matching flow.",
-        design:
-          "The final design uses a clean, friendly interface with clear visual hierarchy. I focused on making the matching process feel low-pressure and fun, while ensuring safety through school email verification. The app includes features like study goal setting, availability matching, and group chat creation.",
+        prioritizationCut:
+          "Features considered but cut: public profiles, study session scheduling, flashcard tools. These added complexity without solving the core friction problem.",
+        executionDelivery:
+          "I defined product requirements and user stories for each flow, designed wireframes and a high-fidelity prototype in Figma, and built the full application in React Native. I conducted informal user testing with peers before finalizing the design, iterating on the onboarding flow based on feedback that the initial course selection step was confusing.",
         outcome: {
+          metrics: [
+            "Fully functional prototype with working authentication, real-time group chat, and automated matching logic",
+            "User testing showed significantly reduced friction compared to the status quo of group chat apps",
+            "Demonstrated end-to-end product ownership as a solo contributor",
+          ],
           learnings: [
-            "Students prefer lightweight, focused tools over feature-heavy platforms",
-            "Privacy and safety concerns are top of mind for students",
-            "Integration with course management systems would significantly improve UX",
+            "The best product solution is sometimes removing a step entirely rather than improving it — automated matching eliminated the hardest part of the problem",
+            "User testing even at small scale surfaces real friction you can't predict in design",
+            "Scope discipline matters — cutting the extra features kept the core experience clean and usable",
           ],
         },
       },
       moodGarden: {
         title: "Mood Garden",
         subtitle: "Mood Tracking app",
-        designImage: "mood-garden-screens.png",
-        wireframesImage: "mood-garden-wireframes.png",
-        role: "UX/UI Designer",
+        outcomeImage: "mood-garden-screens.png",
+        role: "Product Owner, Designer, Developer",
         timeline: "4 months",
-        tools: "Figma, React Native, User Research",
+        tools: "Figma, React Native, Material Design",
+        projectOverview:
+          "Mood Garden is a native Android mental wellness app that helps users build consistent emotional self-awareness habits through daily mood tracking. I designed and built this as an academic project, owning the full product lifecycle from problem identification through design, development, and testing. The app was built in React Native applying Material Design conventions for Android.",
         problem:
-          "Mental health tracking apps often feel clinical and intimidating, making users reluctant to engage consistently. Existing solutions lack personalization and don't create a sense of connection or progress that motivates users to maintain their mental wellness journey.",
+          "Mental health tracking apps often feel clinical, intimidating, and disconnected from real user motivation. Apps like Daylio and Reflectly offer mood tracking but feel sterile or require too much effort to maintain consistently. The result is that users start strong and abandon the habit within days. There was an opportunity to build something that felt more personal, rewarding, and connected to a sense of progress.",
+        myRole:
+          "Solo product owner, designer, and developer. I was responsible for every stage — problem definition, user research, product decisions, UX design, and front-end implementation in React Native for Android.",
         research: [
-          "Conducted 20+ user interviews with individuals tracking their mental health",
-          "Analyzed existing mood tracking apps to identify pain points",
-          "Surveyed 150+ potential users about their mental health tracking habits",
-          "Created user personas: 'The Beginner', 'The Regular Tracker', and 'The Wellness Enthusiast'",
-          "Mapped emotional journey from daily tracking to long-term insights",
+          "Identified a clear behavioral pattern: users abandon mental health apps because they feel like a chore, not a reward",
+          "Analyzed competitor apps (Daylio, Reflectly, Bearable) to understand what drove drop-off",
+          "Defined the core insight: the missing ingredient was a sense of visible, personal progress that felt meaningful — not just a graph or a streak counter",
+          "Mapped the user journey from opening the app to logging a mood to reviewing past entries",
         ],
-        problemStatement:
-          "People need a gentle, personalized way to track their mood and mental health that feels supportive rather than clinical, and provides meaningful insights without feeling overwhelming.",
-        goals: [
-          "Create an intuitive, non-intimidating mood tracking experience",
-          "Design personalized insights that help users understand their patterns",
-          "Build trust through beautiful, calming visual design",
-          "Encourage consistent engagement through positive reinforcement",
+        prioritizationInsight:
+          "The central product challenge was motivation and retention. Most mood apps fail because the value of tracking isn't immediately visible to the user. The design needed to make progress feel alive and personal.\n\nThe core product decision was the garden metaphor — your mood entries grow and nurture a visual garden over time. This reframes logging from a clinical task into a creative act with visible, rewarding outcomes.",
+        prioritization: [
+          "The garden visualization: the entire retention strategy depended on making progress feel beautiful and personal",
+          "Simple, fast mood logging: if it took more than 30 seconds the habit would break",
+          "Personalization: users needed to feel the garden was theirs, not generic",
+          "Historical reflection: the ability to look back on patterns over time was a secondary but meaningful value driver",
         ],
-        ideation:
-          "I designed a garden-themed interface where each mood entry helps grow a personal garden. The metaphor of growth and nurturing aligns with mental wellness. I created wireframes focusing on quick daily check-ins, visual mood representation, and gentle progress tracking.",
-        design:
-          "The final design uses soft, calming colors and nature-inspired imagery. The mood tracking flow is simplified to 2-3 taps, with visual feedback that feels rewarding. The garden grows as users track consistently, creating a positive feedback loop. Insights are presented as gentle observations rather than clinical data.",
+        prioritizationCut:
+          "Features considered but cut: social sharing, journaling prompts, therapist integration. These added complexity and shifted the product toward a clinical tool — the opposite of what the research said users needed.",
+        platformDecisionHeading: "Platform Decision — Android & Material Design",
+        platformDecision:
+          "I chose to build Mood Garden for Android specifically to broaden my platform experience beyond iOS. Applying Material Design conventions required different thinking than iOS — different navigation patterns, touch targets, typography scales, and motion principles. This project gave me hands-on experience designing for both major mobile platforms with their distinct conventions.",
+        executionDelivery:
+          "I defined product requirements, designed the full experience in Figma from wireframes through high-fidelity screens, and built the application in React Native. I applied Material Design principles throughout to ensure the experience felt native and intuitive on Android devices.",
         outcome: {
+          metrics: [
+            "Fully functional Android prototype with mood logging, garden visualization, and historical tracking",
+            "Design successfully addressed the clinical feel problem — the garden metaphor created an emotional connection that sterile tracking apps lack",
+            "Demonstrated ability to design and build for Android using Material Design, complementing iOS experience from Raide and Study Circle",
+          ],
           learnings: [
-            "Gamification works when it feels supportive, not competitive",
-            "Visual metaphors (garden growth) create emotional connection",
-            "Quick, frictionless entry is critical for daily tracking apps",
-            "Privacy and data control are top concerns for mental health apps",
+            "The right metaphor can solve a retention problem that features alone cannot — the garden concept changed the entire emotional experience of the product",
+            "Designing for Android after iOS forced me to think more deeply about platform conventions and when to follow them vs depart from them",
+            "Sometimes the best product decision is reframing the user's relationship with the task entirely rather than making the task easier",
           ],
         },
       },
@@ -307,7 +349,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2>Problem</h2>
                 <p>${caseStudy.problem}</p>
             </div>
-            
+
+            ${
+              caseStudy.myRole
+                ? `
+            <div class="case-study-section">
+                <h2>My Role</h2>
+                <p>${caseStudy.myRole}</p>
+            </div>
+            `
+                : ""
+            }
+
             <div class="case-study-section">
                 <h2>Research</h2>
                 <ul>
@@ -317,6 +370,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </ul>
             </div>
             
+            ${
+              caseStudy.goals
+                ? `
             <div class="case-study-section">
                 <h2>Define</h2>
                 <div class="callout-box">
@@ -331,7 +387,49 @@ document.addEventListener("DOMContentLoaded", function () {
                       .join("")}
                 </ul>
             </div>
-            
+            `
+                : ""
+            }
+
+            ${
+              caseStudy.prioritization
+                ? `
+            <div class="case-study-section">
+                <h2>Product Decisions & Prioritization</h2>
+                ${caseStudy.prioritizationInsight
+                  .split("\n\n")
+                  .map((para) => `<p>${para}</p>`)
+                  .join("")}
+                <h3>We prioritized in this order:</h3>
+                <ul>
+                    ${caseStudy.prioritization
+                      .map((item) => `<li>${item}</li>`)
+                      .join("")}
+                </ul>
+                ${
+                  caseStudy.prioritizationCut
+                    ? `<p>${caseStudy.prioritizationCut}</p>`
+                    : ""
+                }
+            </div>
+            `
+                : ""
+            }
+
+            ${
+              caseStudy.platformDecision
+                ? `
+            <div class="case-study-section">
+                <h2>${caseStudy.platformDecisionHeading}</h2>
+                <p>${caseStudy.platformDecision}</p>
+            </div>
+            `
+                : ""
+            }
+
+            ${
+              caseStudy.ideation
+                ? `
             <div class="case-study-section">
                 <h2>Ideation</h2>
                 <p>${caseStudy.ideation}</p>
@@ -341,7 +439,13 @@ document.addEventListener("DOMContentLoaded", function () {
       } wireframes">
                 </div>
             </div>
-            
+            `
+                : ""
+            }
+
+            ${
+              caseStudy.design
+                ? `
             <div class="case-study-section">
                 <h2>Design</h2>
                 <p>${caseStudy.design}</p>
@@ -355,7 +459,24 @@ document.addEventListener("DOMContentLoaded", function () {
                     : ""
                 }
             </div>
-            
+            `
+                : ""
+            }
+
+            ${
+              caseStudy.executionDelivery
+                ? `
+            <div class="case-study-section">
+                <h2>Execution & Delivery</h2>
+                ${caseStudy.executionDelivery
+                  .split("\n\n")
+                  .map((para) => `<p>${para}</p>`)
+                  .join("")}
+            </div>
+            `
+                : ""
+            }
+
             <div class="case-study-section">
                 <h2>Outcome</h2>
                 ${
@@ -366,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         const metrics = caseStudy.outcome.metrics;
                         const isCardFormat = metrics[0] && typeof metrics[0] === "object" && "value" in metrics[0];
                         return `
-                <h3>Metrics</h3>
+                <h3>${isCardFormat ? "Metrics" : "Highlights"}</h3>
                 <div class="outcome-metrics${isCardFormat ? " outcome-metrics--cards" : ""}">
                 ${isCardFormat
                   ? metrics

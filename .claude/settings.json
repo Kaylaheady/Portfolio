@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check script.js)",
+      "Bash(node --check /Users/kaylaheady/Desktop/Resumes/Portfolio-main/script.js)",
+      "Bash(git mv *)",
+      "Bash(find ~/Downloads ~/Desktop /tmp -iname \"*kaylaheady-resume*\" 2>/dev/null)",
+      "Read(//Users/kaylaheady/Downloads/**)",
+      "Bash(ls -la ~/Downloads/kaylaheady-resume*.pdf \"/Users/kaylaheady/Desktop/Resumes/Portfolio-main/assets/kaylaheady-resume.pdf\" \"/Users/kaylaheady/Desktop/Resumes/Portfolio-main/assets/img/kaylaheady-resume.pdf\")",
+      "Bash(md5 \"/Users/kaylaheady/Downloads/kaylaheady-resume \\(1\\).pdf\" \"/Users/kaylaheady/Desktop/Resumes/Portfolio-main/assets/kaylaheady-resume.pdf\" \"/Users/kaylaheady/Downloads/kaylaheady-resume.pdf\" \"/Users/kaylaheady/Desktop/Resumes/Portfolio-main/assets/img/kaylaheady-resume.pdf\")",
+      "Bash(git rm *)",
+      "Bash(chromium-cli --help)",
+      "Bash(command -v chromium-cli)",
+      "Read(//usr/local/bin/**)",
+      "Bash(npm ls *)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(mkdir -p /tmp/pw-run)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(cp /tmp/screenshot.mjs /tmp/pw-run/screenshot.mjs)",
+      "Read(//private/tmp/pw-run/**)",
+      "Bash(node screenshot.mjs)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Read(//tmp/pw-run/**)",
+      "Bash(node -e ' *)",
+      "Bash(lsof -ti:8123 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(node screenshot3.mjs)"
+    ],
+    "additionalDirectories": [
+      "/tmp",
+      "/private/tmp",
+      "/tmp/pw-run",
+      "/private/tmp/pw-run"
+    ]
+  }
+}
